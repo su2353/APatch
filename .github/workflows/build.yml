@@ -115,6 +115,12 @@ jobs:
           name: "mappings"
           path: "app/build/outputs/mapping/release/"
 
+      - name: Upload Unsigned APK
+        uses: actions/upload-artifact@v6
+        with:
+          name: APatch-Unsigned-APK
+          path: app/build/outputs/apk/**/*.apk
+
       - name: Upload build artifact1
         env:
           SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
